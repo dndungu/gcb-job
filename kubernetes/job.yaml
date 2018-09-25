@@ -1,0 +1,33 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: spinnaker-gcb-stage
+spec:
+  template:
+    spec:
+      containers:
+      - name: spinnaker-gcb-stage
+        image: dndungu/spinnaker-gcb-stage
+        env:
+        - name: COMMIT_SHA
+          value: "${trigger['hash']}"
+        - name: PROJECT_ID
+          value: "1"
+        - name: REPO_NAME
+          value: "${trigger['slug']}"
+        - name: TRIGGER_ID
+          value: "{{GCP_TRIGGER_ID}}"
+        - name: SUBSCRIPTION_NAME
+          value: "spinnaker"
+        - name: GOOGLE_APPLICATION_CREDENTIALS
+          value: "/secrets/gcp/sa.json"
+        volumeMounts:
+        - name: spinnaker-poc-sa
+          mountPath: "/secrets/gcp"
+          readOnly: true 
+      volumes:
+      - name: spinnaker-poc-sa
+        secret:
+          secretName: spinnaker-poc-sa
+      restartPolicy: Never
+  backoffLimit: 4
