@@ -1,9 +1,10 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: gcb-stage
+  name: gcb-stage-${trigger['hash']}
   labels:
     project: gcb-stage
+    revision: ${trigger['hash']}
 spec:
   template:
     spec:
@@ -32,4 +33,4 @@ spec:
         secret:
           secretName: spinnaker-poc-sa
       restartPolicy: Never
-  backoffLimit: 4
+  backoffLimit: 1
