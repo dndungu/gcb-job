@@ -23,6 +23,8 @@ LABEL maintainer "David Ndungu <dnjuguna@gmail.com>"
 
 WORKDIR /bin
 
+COPY --from=builder /etc/ssl/certs /etc/ssl/certs
+
 COPY --from=builder /gcb-stage .
 
 ENTRYPOINT ["/bin/gcb-stage"]
