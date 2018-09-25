@@ -26,8 +26,8 @@
   version = "0.28.0"
 
 [[constraint]]
-  branch = "dndungu/MVP"
-  name = "github.com/dndungu/spinnaker-gcb-stage"
+  branch = "master"
+  name = "github.com/dndungu/gcb-stage"
 
 [[constraint]]
   branch = "master"

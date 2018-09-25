@@ -14,10 +14,10 @@
   version = "v0.6.0"
 
 [[projects]]
-  branch = "dndungu/MVP"
+  branch = "master"
   name = "github.com/dndungu/spinnaker-gcb-stage"
   packages = ["pkg/gcb"]
-  revision = "7cce406ce207ebd5558ce37a1d25c2075496b165"
+  revision = "53f1572650e0e376381ce6b38d2460ab1500ae85"
 
 [[projects]]
   name = "github.com/golang/protobuf"
@@ -35,7 +35,7 @@
   branch = "master"
   name = "github.com/zatiti/log"
   packages = ["."]
-  revision = "ee5fd8aea693c5dce955b6ef44d366a66fe98ee4"
+  revision = "3d6f92873e0d469039599416e56e053f760c1270"
 
 [[projects]]
   name = "go.opencensus.io"
@@ -89,7 +89,7 @@
   branch = "master"
   name = "google.golang.org/genproto"
   packages = ["googleapis/api/annotations","googleapis/iam/v1","googleapis/pubsub/v1","googleapis/rpc/status","protobuf/field_mask"]
-  revision = "221a8d4f74948678f06caaa13c9d41d22e069ae8"
+  revision = "0e822944c569bf5c9afd034adaa56208bd2906ac"
 
 [[projects]]
   name = "google.golang.org/grpc"
@@ -100,6 +100,6 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "424811fc7becb9892aa42c8a4bb5a9419fb88a07654c01cbf746892e0a5a321f"
+  inputs-digest = "067ff1f780937379cf47598cd06afd7055f98f198e38c5c582658bda583ac4a6"
   solver-name = "gps-cdcl"
   solver-version = 1
