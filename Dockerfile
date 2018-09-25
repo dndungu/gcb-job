@@ -8,14 +8,14 @@ WORKDIR /go/src/github.com/zendesk/gcb-stage
 
 COPY . .
 
-ARG commit_sha
+ARG SOURCE_COMMIT
 
 RUN go get -u github.com/golang/dep/cmd/dep
 
 RUN dep ensure
 
 RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo \
-	-o /gcb-stage -ldflags "-X main.GitRevision=${commit_sha}" .
+	-o /gcb-stage -ldflags "-X main.GitRevision=${SOURCE_COMMIT}" .
 
 FROM scratch
 
