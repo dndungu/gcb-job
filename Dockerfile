@@ -19,16 +19,10 @@ RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo \
 
 FROM scratch
 
-LABEL maintainer "David Ndungu <dndungu@zendesk.com>"
-
-ENV GRIFFON_PORT 80
+LABEL maintainer "David Ndungu <dnjuguna@gmail.com>"
 
 WORKDIR /bin
 
-ADD config.yml /etc/gcb-stage.yml
-
 COPY --from=builder /gcb-stage .
-
-EXPOSE ${GRIFFON_PORT}
 
 ENTRYPOINT ["/bin/gcb-stage"]
