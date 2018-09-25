@@ -27,6 +27,8 @@ func env(k string) string {
 }
 
 func init() {
+	logger.WithField("revision", GitRevision)
+
 	commitSha := env("COMMIT_SHA")
 	logger.WithField("commit_sha", commitSha)
 
