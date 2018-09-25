@@ -1,13 +1,13 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: spinnaker-gcb-stage
+  name: gcb-stage
 spec:
   template:
     spec:
       containers:
-      - name: spinnaker-gcb-stage
-        image: dndungu/spinnaker-gcb-stage
+      - name: gcb-stage
+        image: dndungu/gcb-stage
         env:
         - name: COMMIT_SHA
           value: "${trigger['hash']}"
