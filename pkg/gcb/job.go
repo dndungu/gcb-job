@@ -34,8 +34,8 @@ func (j Job) Run() (id string, err error) {
 	rs := cloudbuild.RepoSource{
 		CommitSha: j.commitSha,
 		ProjectId: j.projectID,
-		RepoName:  j.repoName,
-		Dir:       "/",
+		//		RepoName:  j.repoName,
+		Dir: "/",
 	}
 	requestBody, err := rs.MarshalJSON()
 	if err != nil {
