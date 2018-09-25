@@ -6,6 +6,8 @@ import (
 	"os"
 )
 
+var GitRevision string
+
 type Job interface {
 	Run() (id string, err error)
 	Status() chan string
