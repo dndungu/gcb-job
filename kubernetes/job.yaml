@@ -26,7 +26,7 @@ spec:
         volumeMounts:
         - name: spinnaker-poc-sa
           mountPath: "/secrets/gcp"
-          readOnly: true 
+          readOnly: true
       volumes:
       - name: spinnaker-poc-sa
         secret:
