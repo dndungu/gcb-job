@@ -1,2 +1,2 @@
 # Google Cloud Build Job
-A tiny container that will trigger and wait for a Google Cloud Build
+A tiny job that will trigger and wait for a Google Cloud Build
