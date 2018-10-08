@@ -1,2 +1,2 @@
-# trigger-gcb
-A tiny container that will trigger a Google Cloud Build
+# GCB Job
+A tiny container that will trigger and wait for a Google Cloud Build
